@@ -2,14 +2,14 @@ import math
 
 
 def distanciaEuclidiana(noh1, noh2):
-    x = noh1[1]**2 + noh2[1]**2
-    y = noh1[2]**2 + noh2[2]**2
+    x = (noh1[1] - noh2[1])**2
+    y = (noh1[2] - noh2[2])**2
     resultado = (x+y)**(1/2)
     return resultado
 
 def calculaAtenuacao(noh1, noh2):
     distancia = distanciaEuclidiana(noh1, noh2)
-    return (-45 + (-20 * math.log(distancia, 10)))
+    return (-10 + (-20 * math.log(distancia, 10)))
 
 with open('grid.txt', 'r') as arquivoLeitura:
     linhas = arquivoLeitura.read().splitlines()
